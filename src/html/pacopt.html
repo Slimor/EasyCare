@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>easyCare</title>
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="../assets/images/logos/ecfav.png"
+    />
+    <link rel="stylesheet" href="../assets/css/styles.min.css" />
+    <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/sidebarmenu.js"></script>
+    <script src="../assets/js/app.min.js"></script>
+    <script src="../assets/libs/simplebar/dist/simplebar.js"></script>
+  </head>
+
+  <body>
+    <div
+      class="page-wrapper"
+      id="main-wrapper"
+      data-layout="vertical"
+      data-navbarbg="skin6"
+      data-sidebartype="full"
+      data-sidebar-position="fixed"
+      data-header-position="fixed"
+    >
+    <aside class="left-sidebar">
+      <div>
+        <div
+          class="brand-logo d-flex align-items-center justify-content-between"
+        >
+          <a href="../../index.html" class="text-nowrap logo-img">
+            <img
+              src="easyCARE.svg"
+              width="130"
+              alt="logo"
+              class="center"
+            />
+          </a>
+          <div
+            class="close-btn d-xl-none d-block sidebartoggler cursor-pointer"
+            id="sidebarCollapse"
+          >
+            <i class="ti ti-x fs-8"></i>
+          </div>
+        </div>
+        <nav class="sidebar-nav scroll-sidebar" data-simplebar="">
+          <ul id="sidebarnav">
+            <li class="nav-small-cap">
+              <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+              <span class="hide-menu">Menu</span>
+            </li>
+            <li class="sidebar-item">
+              <a
+                class="sidebar-link"
+                href="../../index.html"
+                aria-expanded="false"
+              >
+                <span>
+                  <i class="ti ti-layout-dashboard"></i>
+                </span>
+                <span class="hide-menu">Panel
+                </span>
+              </a>
+            </li>
+            <li class="nav-small-cap">
+              <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+              <span class="hide-menu">Menu</span>
+            </li>
+            <li class="sidebar-item">
+              <a
+                class="sidebar-link"
+                href="todolist.html"
+                aria-expanded="false"
+              >
+                <span>
+                  <i class="ti ti-article"></i>
+                </span>
+                <span class="hide-menu">Lista zadań</span>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a
+                class="sidebar-link"
+                aria-expanded="false"
+                href="patients.html"
+              >
+                <span>
+                  <i class="ti ti-users"></i>
+                </span>
+                <span class="hide-menu">Pacjenci</span>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a
+                class="sidebar-link"
+                aria-expanded="false"
+                href="patcard.html"
+              >
+                <span>
+                  <i class="ti ti-user"></i>
+                </span>
+                <span class="hide-menu">Karta pacjenta</span>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a
+                class="sidebar-link"
+                aria-expanded="false"
+                href="calendar.html"
+              >
+                <span>
+                  <i class="ti ti-calendar"></i>
+                </span>
+                <span class="hide-menu">Kalendarz</span>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a
+                class="sidebar-link"
+                aria-expanded="false"
+                href="pacopt.html"
+              >
+                <span>
+                  <i class="ti ti-file-description"></i>
+                </span>
+                <span class="hide-menu">Opcje pacjentów</span>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a
+                class="sidebar-link"
+                aria-expanded="false"
+                href="addpat.html"
+              >
+                <span>
+                  <i class="ti ti-file-description"></i>
+                </span>
+                <span class="hide-menu">Opcje użytkowników</span>
+              </a>
+            </li>
+            <li class="nav-small-cap">
+              <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+              <span class="hide-menu">Opcje</span>
+            </li>
+            <li class="sidebar-item">
+              <a
+                class="sidebar-link"
+                href="../../authentication-login.html"
+                aria-expanded="false"
+              >
+                <span>
+                  <i class="ti ti-login"></i>
+                </span>
+                <span class="hide-menu">Wyloguj</span>
+              </a>
+            </li>
+        </ul>
+          <div>
+          </div>
+        </nav>
+      </div>
+    </aside>
+      <div class="body-wrapper">
+        <div class="container-fluid">
+          <div class="card">
+            <div class="card-body">
+              <h2 class="mb-4 text-center">Zarządaj pacjentami</h2>
+              <div class="container mt-4">
+                <div class="card-header">
+                  <ul class="nav nav-tabs card-header-tabs" data-bs-toggle="tabs">
+                    <li class="nav-item">
+                      <a href="#tabs-add-ex1" class="nav-link active" data-bs-toggle="tab">Dodaj</a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="#tabs-delete-ex1" class="nav-link" data-bs-toggle="tab">Usuń</a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="#tabs-update-ex1" class="nav-link" data-bs-toggle="tab">Zaktualizuj</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="card-body">
+                  <div class="tab-content">
+                    <div class="tab-pane active show" id="tabs-add-ex1">
+                      <form>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="mb-4">
+                            <label for="inputImie" class="form-label">Imię</label>
+                            <input type="text" class="form-control" id="inputImie" placeholder="Jan" required>
+                          </div>
+                          <div class="mb-4">
+                            <label for="inputWiek" class="form-label">Wiek</label>
+                            <input type="date" class="form-control" id="inputWiek" placeholder="32" required>
+                          </div>
+                          <div class="mb-4">
+                            <label for="inputNumerTel" class="form-label">Numer Telefonu</label>
+                            <input type="text" pattern="[0-9]{9}" class="form-control" id="inputTelefon" placeholder="123456789" required>
+                          </div>
+                          <div class="mb-4">
+                            <label for="inputMiasto" class="form-label">Miasto</label>
+                            <input type="text" class="form-control" id="inputMiasto" placeholder="Szczecin" required>
+                          </div>
+                          <div class="mb-4">
+                            <label for="inputUlica" class="form-label">Ulica</label>
+                            <input type="text" class="form-control" id="inputUlica" placeholder="Rynkowa 41/13" required>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="mb-4">
+                            <label for="inputNazwisko" class="form-label">Nazwisko</label>
+                            <input type="text" class="form-control" id="inputNazwisko" placeholder="Brzechwa" required>
+                          </div>
+                          <div class="mb-4">
+                            <label for="inputPESEL" class="form-label">PESEL</label>
+                            <input type="number" class="form-control" id="inputPESEL" pattern="[0-9]{11}"placeholder="00000000000" required>
+                          </div>
+                          <div class="mb-4">
+                            <label for="inputEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="inputEmail" placeholder="jan@poczta.pl" required>
+                          </div>
+                          <div class="mb-4">
+                            <label for="inputKodPocztowy" class="form-label">Kod Pocztowy</label>
+                            <input type="text" pattern="[0-9]{2}-[0-9]{3}" class="form-control" id="inputKodPocztowy" placeholder="00-000" required>
+                          </div>
+                          <div class="mb-4">
+                            <label for="inputKrew" class="form-label">Grupa krwi</label>
+                            <input type="text" class="form-control" id="inputKrew" placeholder="A" required>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="text-center">
+                        <button type="submit" class="btn btn-primary">Zapisz</button>
+                      </div>
+                  </form>
+                    </div>
+                    <div class="tab-pane" id="tabs-delete-ex1">
+                      <form>
+                        <div class="row">
+                          <div class="col-md-6">
+                            <div class="mb-4">
+                              <label for="inputImie" class="form-label">Imię</label>
+                              <input type="text" class="form-control" id="inputImie" placeholder="Jan" required>
+                            </div>
+                            <div class="mb-4">
+                              <label for="inputWiek" class="form-label">Wiek</label>
+                              <input type="date" class="form-control" id="inputWiek" placeholder="32" required>
+                            </div>
+                            <div class="mb-4">
+                              <label for="inputNumerTel" class="form-label">Numer Telefonu</label>
+                              <input type="text" pattern="[0-9]{9}" class="form-control" id="inputTelefon" placeholder="123456789" required>
+                            </div>
+                            <div class="mb-4">
+                              <label for="inputMiasto" class="form-label">Miasto</label>
+                              <input type="text" class="form-control" id="inputMiasto" placeholder="Szczecin" required>
+                            </div>
+                            <div class="mb-4">
+                              <label for="inputUlica" class="form-label">Ulica</label>
+                              <input type="text" class="form-control" id="inputUlica" placeholder="Rynkowa 41/13" required>
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="mb-4">
+                              <label for="inputNazwisko" class="form-label">Nazwisko</label>
+                              <input type="text" class="form-control" id="inputNazwisko" placeholder="Brzechwa" required>
+                            </div>
+                            <div class="mb-4">
+                              <label for="inputPESEL" class="form-label">PESEL</label>
+                              <input type="number" class="form-control" id="inputPESEL" pattern="[0-9]{11}"placeholder="00000000000" required>
+                            </div>
+                            <div class="mb-4">
+                              <label for="inputEmail" class="form-label">Email</label>
+                              <input type="email" class="form-control" id="inputEmail" placeholder="jan@poczta.pl" required>
+                            </div>
+                            <div class="mb-4">
+                              <label for="inputKodPocztowy" class="form-label">Kod Pocztowy</label>
+                              <input type="text" pattern="[0-9]{2}-[0-9]{3}" class="form-control" id="inputKodPocztowy" placeholder="00-000" required>
+                            </div>
+                            <div class="mb-4">
+                              <label for="inputKrew" class="form-label">Grupa krwi</label>
+                              <input type="text" class="form-control" id="inputKrew" placeholder="A" required>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="text-center">
+                          <button type="submit" class="btn btn-primary">Zapisz</button>
+                        </div>
+                    </form>
+                    </div>
+                    <div class="tab-pane" id="tabs-update-ex1">
+                      <form>
+                        <div class="row">
+                          <div class="col-md-6">
+                            <div class="mb-4">
+                              <label for="inputImie" class="form-label">Imię</label>
+                              <input type="text" class="form-control" id="inputImie" placeholder="Jan" required>
+                            </div>
+                            <div class="mb-4">
+                              <label for="inputWiek" class="form-label">Wiek</label>
+                              <input type="date" class="form-control" id="inputWiek" placeholder="32" required>
+                            </div>
+                            <div class="mb-4">
+                              <label for="inputNumerTel" class="form-label">Numer Telefonu</label>
+                              <input type="text" pattern="[0-9]{9}" class="form-control" id="inputTelefon" placeholder="123456789" required>
+                            </div>
+                            <div class="mb-4">
+                              <label for="inputMiasto" class="form-label">Miasto</label>
+                              <input type="text" class="form-control" id="inputMiasto" placeholder="Szczecin" required>
+                            </div>
+                            <div class="mb-4">
+                              <label for="inputUlica" class="form-label">Ulica</label>
+                              <input type="text" class="form-control" id="inputUlica" placeholder="Rynkowa 41/13" required>
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="mb-4">
+                              <label for="inputNazwisko" class="form-label">Nazwisko</label>
+                              <input type="text" class="form-control" id="inputNazwisko" placeholder="Brzechwa" required>
+                            </div>
+                            <div class="mb-4">
+                              <label for="inputPESEL" class="form-label">PESEL</label>
+                              <input type="number" class="form-control" id="inputPESEL" pattern="[0-9]{11}"placeholder="00000000000" required>
+                            </div>
+                            <div class="mb-4">
+                              <label for="inputEmail" class="form-label">Email</label>
+                              <input type="email" class="form-control" id="inputEmail" placeholder="jan@poczta.pl" required>
+                            </div>
+                            <div class="mb-4">
+                              <label for="inputKodPocztowy" class="form-label">Kod Pocztowy</label>
+                              <input type="text" pattern="[0-9]{2}-[0-9]{3}" class="form-control" id="inputKodPocztowy" placeholder="00-000" required>
+                            </div>
+                            <div class="mb-4">
+                              <label for="inputKrew" class="form-label">Grupa krwi</label>
+                              <input type="text" class="form-control" id="inputKrew" placeholder="A" required>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="text-center">
+                          <button type="submit" class="btn btn-primary">Zapisz</button>
+                        </div>
+                    </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  </body>
+</html>

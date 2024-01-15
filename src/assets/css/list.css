@@ -1,0 +1,9 @@
+.form-check-label {
+  display: flex;
+  align-items: center;
+}
+.form-check-label input[type="checkbox"] {
+  margin-right: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>easyCare</title>
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="../assets/images/logos/eclogo.png"
+    />
+    <link rel="stylesheet" href="../assets/css/styles.min.css" />
+    <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/sidebarmenu.js"></script>
+    <script src="../assets/js/app.min.js"></script>
+    <script src="../assets/libs/simplebar/dist/simplebar.js"></script>
+  </head>
+
+  <body>
+    <div
+      class="page-wrapper"
+      id="main-wrapper"
+      data-layout="vertical"
+      data-navbarbg="skin6"
+      data-sidebartype="full"
+      data-sidebar-position="fixed"
+      data-header-position="fixed"
+    >
+    <aside class="left-sidebar">
+      <div>
+        <div
+          class="brand-logo d-flex align-items-center justify-content-between"
+        >
+          <a href="../../index.html" class="text-nowrap logo-img">
+            <img
+              src="easyCARE.svg"
+              width="130"
+              alt="logo"
+              class="center"
+            />
+          </a>
+          <div
+            class="close-btn d-xl-none d-block sidebartoggler cursor-pointer"
+            id="sidebarCollapse"
+          >
+            <i class="ti ti-x fs-8"></i>
+          </div>
+        </div>
+        <nav class="sidebar-nav scroll-sidebar" data-simplebar="">
+          <ul id="sidebarnav">
+            <li class="nav-small-cap">
+              <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+              <span class="hide-menu">Menu</span>
+            </li>
+            <li class="sidebar-item">
+              <a
+                class="sidebar-link"
+                href="../../index.html"
+                aria-expanded="false"
+              >
+                <span>
+                  <i class="ti ti-layout-dashboard"></i>
+                </span>
+                <span class="hide-menu">Panel
+                </span>
+              </a>
+            </li>
+            <li class="nav-small-cap">
+              <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+              <span class="hide-menu">Menu</span>
+            </li>
+            <li class="sidebar-item">
+              <a
+                class="sidebar-link"
+                href="todolist.html"
+                aria-expanded="false"
+              >
+                <span>
+                  <i class="ti ti-article"></i>
+                </span>
+                <span class="hide-menu">Lista zadań</span>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a
+                class="sidebar-link"
+                aria-expanded="false"
+                href="patients.html"
+              >
+                <span>
+                  <i class="ti ti-users"></i>
+                </span>
+                <span class="hide-menu">Pacjenci</span>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a
+                class="sidebar-link"
+                aria-expanded="false"
+                href="patcard.html"
+              >
+                <span>
+                  <i class="ti ti-user"></i>
+                </span>
+                <span class="hide-menu">Karta pacjenta</span>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a
+                class="sidebar-link"
+                aria-expanded="false"
+                href="calendar.html"
+              >
+                <span>
+                  <i class="ti ti-calendar"></i>
+                </span>
+                <span class="hide-menu">Kalendarz</span>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a
+                class="sidebar-link"
+                aria-expanded="false"
+                href="pacopt.html"
+              >
+                <span>
+                  <i class="ti ti-file-description"></i>
+                </span>
+                <span class="hide-menu">Opcje pacjentów</span>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a
+                class="sidebar-link"
+                aria-expanded="false"
+                href="addpat.html"
+              >
+                <span>
+                  <i class="ti ti-file-description"></i>
+                </span>
+                <span class="hide-menu">Opcje użytkowników</span>
+              </a>
+            </li>
+            <li class="nav-small-cap">
+              <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+              <span class="hide-menu">Opcje</span>
+            </li>
+            <li class="sidebar-item">
+              <a
+                class="sidebar-link"
+                href="../../authentication-login.html"
+                aria-expanded="false"
+              >
+                <span>
+                  <i class="ti ti-login"></i>
+                </span>
+                <span class="hide-menu">Wyloguj</span>
+              </a>
+            </li>
+        </ul>
+          <div>
+          </div>
+        </nav>
+      </div>
+    </aside>
+      <div class="body-wrapper">
+        <div class="container-fluid">
+          <div class="card">
+            <div class="card-body">
+              <h2 class="mb-4 text-center">Zarządzaj użytkownikami</h2>
+              <div class="container mt-4">
+                <div class="card-header">
+                  <ul class="nav nav-tabs card-header-tabs" data-bs-toggle="tabs">
+                    <li class="nav-item">
+                      <a href="#tabs-add-ex1" class="nav-link active" data-bs-toggle="tab">Dodaj</a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="#tabs-delete-ex1" class="nav-link" data-bs-toggle="tab">Usuń</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="card-body">
+                  <div class="tab-content">
+                    <div class="tab-pane active show" id="tabs-add-ex1">
+                      <form>
+                        <div class="row">
+                          <div class="col-md-6">
+                            <div class="mb-4">
+                              <label for="inputLogin" class="form-label">Login</label>
+                              <input type="text" class="form-control" id="inputLogin" placeholder="JNBR" required>
+                            </div>
+                            <div class="mb-4">
+                              <label for="inputEmail" class="form-label">Wiek</label>
+                              <input type="email" class="form-control" id="inputEmail" placeholder="jan@easycare.pl" required>
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="mb-4">
+                              <label for="inputPassword" class="form-label">Hasło</label>
+                              <input type="text" class="form-control" id="inputPassword" placeholder="Silne hasło" required>
+                            </div>
+                            <div class="mb-4">
+                              <label for="inputRole" class="form-label">Rola</label>
+                                <select class="form-control" id="inputRole">
+                                  <option>Admin</option>
+                                  <option>Lekarz</option>
+                                  <option>Pielęgniarka</option>
+                                  <option>Ratownik</option>
+                                </select>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="text-center">
+                          <button type="submit" class="btn btn-primary">Zapisz</button>
+                        </div>
+                    </form>
+                    </div>
+                    <div class="tab-pane" id="tabs-update-ex1">
+                    </div>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div>
+  </body>
+</html>

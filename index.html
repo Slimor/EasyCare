@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dashboard</title>
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="src/assets/images/logos/ecfav.png"
+    />
+    <link rel="stylesheet" href="src/assets/css/styles.min.css" />
+    <script src="src/assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="src/assets/js/sidebarmenu.js"></script>
+    <script src="src/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="src/assets/js/app.min.js"></script>
+    <script src="src/assets/libs/apexcharts/dist/apexcharts.min.js"></script>
+    <script src="src/assets/js/dashboard.js"></script>
+    <script src="src/assets/js/menu.js"></script>
+  </head>
+
+  <body>
+    <!--  Body Wrapper -->
+    <div
+      class="page-wrapper"
+      id="main-wrapper"
+      data-layout="vertical"
+      data-navbarbg="skin6"
+      data-sidebartype="full"
+      data-sidebar-position="fixed"
+      data-header-position="fixed"
+    >
+      <aside class="left-sidebar">
+        <div>
+          <div
+            class="brand-logo d-flex align-items-center justify-content-between"
+          >
+            <a href="index.html" class="text-nowrap logo-img">
+              <img
+                src="src/assets/images/logos/easyCARE.svg"
+                width="130"
+                alt="logo"
+                class="center"
+              />
+            </a>
+            <div
+              class="close-btn d-xl-none d-block sidebartoggler cursor-pointer"
+              id="sidebarCollapse"
+            >
+              <i class="ti ti-x fs-8"></i>
+            </div>
+          </div>
+          <nav id="chooser" class="sidebar-nav scroll-sidebar" data-simplebar="">
+            <ul id="sidebarnav">
+              <li class="nav-small-cap">
+                <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+                <span class="hide-menu">Menu</span>
+              </li>
+              <li class="sidebar-item">
+                <a
+                  class="sidebar-link"
+                  href="index.html"
+                  aria-expanded="false"
+                >
+                  <span>
+                    <i class="ti ti-layout-dashboard"></i>
+                  </span>
+                  <span class="hide-menu">Panel
+                  </span>
+                </a>
+              </li>
+              <li class="nav-small-cap">
+                <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+                <span class="hide-menu">Menu</span>
+              </li>
+              <li class="sidebar-item">
+                <a
+                  class="sidebar-link"
+                  href="src/html/todolist.html"
+                  aria-expanded="false"
+                >
+                  <span>
+                    <i class="ti ti-article"></i>
+                  </span>
+                  <span class="hide-menu">Lista zadań</span>
+                </a>
+              </li>
+              <li class="sidebar-item">
+                <a
+                  class="sidebar-link"
+                  aria-expanded="false"
+                  href="src/html/patients.html"
+                >
+                  <span>
+                    <i class="ti ti-users"></i>
+                  </span>
+                  <span class="hide-menu">Pacjenci</span>
+                </a>
+              </li>
+              <li class="sidebar-item">
+                <a
+                  class="sidebar-link"
+                  aria-expanded="false"
+                  href="src/html/patcard.html"
+                >
+                  <span>
+                    <i class="ti ti-user"></i>
+                  </span>
+                  <span class="hide-menu">Karta pacjenta</span>
+                </a>
+              </li>
+              <li class="sidebar-item">
+                <a
+                  class="sidebar-link"
+                  aria-expanded="false"
+                  href="src/html/calendar.html"
+                >
+                  <span>
+                    <i class="ti ti-calendar"></i>
+                  </span>
+                  <span class="hide-menu">Kalendarz</span>
+                </a>
+              </li>
+              <li class="sidebar-item">
+                <a
+                  class="sidebar-link"
+                  aria-expanded="false"
+                  href="src/html/addpat.html"
+                >
+                  <span>
+                    <i class="ti ti-file-description"></i>
+                  </span>
+                  <span class="hide-menu">Opcje użytkowników</span>
+                </a>
+              </li>
+              <li class="nav-small-cap">
+                <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+                <span class="hide-menu">Opcje</span>
+              </li>
+              <li class="sidebar-item">
+                <a
+                  class="sidebar-link"
+                  href="authentication-login.html"
+                  aria-expanded="false"
+                >
+                  <span>
+                    <i class="ti ti-login"></i>
+                  </span>
+                  <span class="hide-menu">Wyloguj</span>
+                </a>
+              </li>
+          </ul>
+          </nav>
+        </div>
+      </aside>
+      <div class="body-wrapper">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-lg-8 d-flex align-items-strech">
+              <div class="card w-100">
+                <div class="card-body">
+                  <div
+                    class="d-sm-flex d-block align-items-center justify-content-between mb-9"
+                  >
+                    <div class="mb-3 mb-sm-0">
+                      <h5 class="card-title fw-semibold">Liczba pacjentów</h5>
+                    </div>
+                    <div>
+                      <select class="form-select">
+                        <option value="1">Marzec 2023</option>
+                        <option value="2">Kwiecień 2023</option>
+                        <option value="3">Maj 2023</option>
+                        <option value="4">Czerwiec 2023</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div id="chart"></div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="row">
+                <div class="col-lg-12">
+                  <!-- Yearly Breakup -->
+                  <div class="card overflow-hidden">
+                    <div class="card-body p-4">
+                      <h5 class="card-title mb-9 fw-semibold">
+                        Pacjenci w poprzednim miesiącu
+                      </h5>
+                      <div class="row align-items-center">
+                        <div class="col-8">
+                          <h4 class="fw-semibold mb-3">471</h4>
+                          <div class="d-flex align-items-center mb-3">
+                            <span
+                              class="me-1 rounded-circle bg-light-success round-20 d-flex align-items-center justify-content-center"
+                            >
+                              <i class="ti ti-arrow-up-left text-success"></i>
+                            </span>
+                            <p class="text-dark me-1 fs-3 mb-0">30%</p>
+                            <p class="fs-3 mb-0">Więcej niż w poprzednim</p>
+                          </div>
+                          <div class="d-flex align-items-center">
+                            <div class="me-4">
+                              <span
+                                class="round-8 bg-primary rounded-circle me-2 d-inline-block"
+                              ></span>
+                              <span class="fs-2">Lipiec</span>
+                            </div>
+                            <div>
+                              <span
+                                class="round-8 bg-light-primary rounded-circle me-2 d-inline-block"
+                              ></span>
+                              <span class="fs-2">Czerwiec</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-4">
+                          <div class="d-flex justify-content-center">
+                            <div id="breakup"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-12">
+                  <!-- Monthly Earnings -->
+                  <div class="card">
+                    <div class="card-body">
+                      <div class="row alig n-items-start">
+                        <div class="col-8">
+                          <h5 class="card-title mb-9 fw-semibold">
+                            Pacjenci w tym tygodniu
+                          </h5>
+                          <h4 class="fw-semibold mb-3">112</h4>
+                          <div class="d-flex align-items-center pb-1">
+                            <span
+                              class="me-2 rounded-circle bg-light-danger round-20 d-flex align-items-center justify-content-center"
+                            >
+                              <i class="ti ti-arrow-down-right text-danger"></i>
+                            </span>
+                            <p class="text-dark me-1 fs-3 mb-0">9%</p>
+                            <p class="fs-3 mb-0">Mniej niż w zeszłym</p>
+                          </div>
+                        </div>
+                        <div class="col-4">
+                          <div class="d-flex justify-content-end">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div id="earning"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+  </body>
+</html>
